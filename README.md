@@ -238,3 +238,8 @@ Even inactive domains can indicate prior phishing infrastructure.
 Why open ports can expose services to attackers.
 
 Importance of using firewalls to control access.
+
+
+<img width="945" height="1201" alt="Screenshot From 2025-09-25 03-00-45" src="https://github.com/user-attachments/assets/dc0d6a3a-ed13-42cd-b691-941c50f55c2a" />
+
+
