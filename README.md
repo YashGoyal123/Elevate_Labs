@@ -106,8 +106,8 @@ Difference between open/closed port responses.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Task 2
-📧 Cyber Security Internship Task – Phishing Email Analysis (Linux)
+##Task 2
+###📧 Cyber Security Internship Task – Phishing Email Analysis (Linux)
 📌 Objective
 
 The goal of this task is to:
