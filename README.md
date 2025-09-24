@@ -121,7 +121,7 @@ Identify phishing indicators like spoofed domains, fake links, and urgent langua
 
 Document findings in a structured report.
 
-🛠 Tools Used
+### 🛠 Tools Used
 
 Linux (Ubuntu/Kali)
 
@@ -133,7 +133,7 @@ Whois → for domain verification.
 
 Curl → for checking suspicious links safely.
 
-🚀 Steps Performed
+### 🚀 Steps Performed
 1️⃣ Get a Sample Phishing Email
 
 Created a sample phishing email file:
@@ -141,7 +141,7 @@ Created a sample phishing email file:
 nano phishing_sample.eml
 
 
-Example content:
+### Example content:
 
 From: "PayPal Security" <security@paypai.com>
 Reply-To: security@paypai.com
@@ -161,7 +161,7 @@ PayPal Support
 
 Saved the file as phishing_sample.eml.
 
-2️⃣ Analyze Email Headers
+### 2️⃣ Analyze Email Headers
 
 Displayed headers with:
 
@@ -176,7 +176,7 @@ Reply-To: attacker-controlled email.
 
 Subject: urgent request → classic social engineering.
 
-3️⃣ Extract Suspicious Links
+### 3️⃣ Extract Suspicious Links
 
 Used grep to list URLs:
 
@@ -187,7 +187,7 @@ Output:
 
 http://paypalsecure-login.com
 
-4️⃣ Verify the Domain
+### 4️⃣ Verify the Domain
 
 Checked domain registration:
 
@@ -201,7 +201,7 @@ No match for domain "PAYPALSECURE-LOGIN.COM".
 
 ✅ This shows the phishing domain was either taken down or never properly registered.
 
-5️⃣ Test Link Safely
+### 5️⃣ Test Link Safely
 
 Fetched headers only (no page load):
 
@@ -212,7 +212,7 @@ No valid response.
 
 Confirms the domain is inactive, but the email itself remains malicious.
 
-📊 Results
+### 📊 Results
 ✅ Phishing Indicators Found
 
 Spoofed Sender: Pretending to be PayPal (paypai.com).
@@ -223,7 +223,7 @@ Urgent Language: “Verify immediately or account suspended.”
 
 Social Engineering: Uses fear to trick user.
 
-📝 Key Learnings
+### 📝 Key Learnings
 
 How to read and analyze raw email headers.
 
