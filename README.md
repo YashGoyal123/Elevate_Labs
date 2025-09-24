@@ -103,6 +103,137 @@ How to analyze scan packets in Wireshark.
 
 Difference between open/closed port responses.
 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Task 2
+📧 Cyber Security Internship Task – Phishing Email Analysis (Linux)
+📌 Objective
+
+The goal of this task is to:
+
+Obtain a sample phishing email.
+
+Analyze its headers, sender details, and links.
+
+Identify phishing indicators like spoofed domains, fake links, and urgent language.
+
+Document findings in a structured report.
+
+🛠 Tools Used
+
+Linux (Ubuntu/Kali)
+
+Nano / Cat → for viewing email file contents.
+
+Grep → for extracting suspicious links.
+
+Whois → for domain verification.
+
+Curl → for checking suspicious links safely.
+
+🚀 Steps Performed
+1️⃣ Get a Sample Phishing Email
+
+Created a sample phishing email file:
+
+nano phishing_sample.eml
+
+
+Example content:
+
+From: "PayPal Security" <security@paypai.com>
+Reply-To: security@paypai.com
+Subject: URGENT: Verify Your Account Immediately!
+Date: Tue, 23 Sep 2025 09:30:00 +0000
+
+Dear Customer,
+
+We noticed unusual activity on your PayPal account. 
+Please verify your account immediately to avoid suspension.
+
+Click here to verify: http://paypalsecure-login.com
+
+Thank you,
+PayPal Support
+
+
+Saved the file as phishing_sample.eml.
+
+2️⃣ Analyze Email Headers
+
+Displayed headers with:
+
+cat phishing_sample.eml | less
+
+
+Findings:
+
+From: security@paypai.com → spoofed domain (typo: "paypai.com").
+
+Reply-To: attacker-controlled email.
+
+Subject: urgent request → classic social engineering.
+
+3️⃣ Extract Suspicious Links
+
+Used grep to list URLs:
+
+grep -oP '(http|https)://[^\s]+' phishing_sample.eml
+
+
+Output:
+
+http://paypalsecure-login.com
+
+4️⃣ Verify the Domain
+
+Checked domain registration:
+
+whois paypalsecure-login.com
+
+
+Result:
+
+No match for domain "PAYPALSECURE-LOGIN.COM".
+
+
+✅ This shows the phishing domain was either taken down or never properly registered.
+
+5️⃣ Test Link Safely
+
+Fetched headers only (no page load):
+
+curl -I http://paypalsecure-login.com
+
+
+No valid response.
+
+Confirms the domain is inactive, but the email itself remains malicious.
+
+📊 Results
+✅ Phishing Indicators Found
+
+Spoofed Sender: Pretending to be PayPal (paypai.com).
+
+Suspicious Link: Fake URL paypalsecure-login.com.
+
+Urgent Language: “Verify immediately or account suspended.”
+
+Social Engineering: Uses fear to trick user.
+
+📝 Key Learnings
+
+How to read and analyze raw email headers.
+
+How to detect spoofed domains and mismatched links.
+
+Use of whois and curl to validate domains safely.
+
+Real-world phishing often uses urgency, fear, and fake branding.
+
+Even inactive domains can indicate prior phishing infrastructure.
+
 Why open ports can expose services to attackers.
 
 Importance of using firewalls to control access.
